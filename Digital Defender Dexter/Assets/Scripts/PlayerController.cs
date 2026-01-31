@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 6f;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float moveSpeed;
+    public Vector3 playerMoveDirection;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,14 +14,21 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Update()
+    private void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputY = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = new Vector3(moveX, moveY, 0f).normalized;
+        playerMoveDirection = new Vector2(inputX, inputY).normalized;
 
-        transform.position += movement * moveSpeed * Time.deltaTime;
+
+    }
+
+    void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2 (playerMoveDirection.x * moveSpeed * Time.deltaTime, playerMoveDirection.y * moveSpeed * Time.deltaTime);
+        
+
     }
 
 
