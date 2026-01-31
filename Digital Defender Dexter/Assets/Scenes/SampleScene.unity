@@ -226,7 +226,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2.2761846
+  orthographic size: 3.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -447,7 +447,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 2.2761846
+    OrthographicSize: 3.9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rb: {fileID: 988008698}
-  moveSpeed: 20
+  moveSpeed: 100
   playerMoveDirection: {x: 0, y: 0, z: 0}
 --- !u!212 &988008696
 SpriteRenderer:
