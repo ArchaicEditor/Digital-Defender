@@ -34,4 +34,13 @@ public class Enemy : MonoBehaviour
         direction = (PlayerController.Instance.transform.position - transform.position).normalized;
         rb.linearVelocity = new Vector2 (direction.x * moveSpeed, direction.y * moveSpeed);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
