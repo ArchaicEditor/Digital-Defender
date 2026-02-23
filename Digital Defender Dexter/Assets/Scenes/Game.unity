@@ -406,19 +406,26 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
     spawnTimer: 0
     spawnInterval: 1
-    enemiesPerWave: 2
+    enemiesPerWave: 10
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
     spawnTimer: 0
-    spawnInterval: 1
-    enemiesPerWave: 2
+    spawnInterval: 2
+    enemiesPerWave: 10
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
     spawnTimer: 0
-    spawnInterval: 1
-    enemiesPerWave: 2
+    spawnInterval: 2.5
+    enemiesPerWave: 5
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
+    spawnTimer: 0
+    spawnInterval: 3
+    enemiesPerWave: 3
     spawnedEnemyCount: 0
   waveNumber: 0
+  minPos: {fileID: 1946365894}
+  maxPos: {fileID: 1989069669}
 --- !u!4 &847412965
 Transform:
   m_ObjectHideFlags: 0
@@ -428,11 +435,13 @@ Transform:
   m_GameObject: {fileID: 847412963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2116599, y: 3.16613, z: 0}
+  m_LocalPosition: {x: -3.74834, y: 1.87387, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2097283519}
+  m_Children:
+  - {fileID: 1946365894}
+  - {fileID: 1989069669}
+  m_Father: {fileID: 907178057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907178054
 GameObject:
@@ -507,7 +516,8 @@ Transform:
   m_LocalPosition: {x: 2.96834, y: 1.33613, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 847412965}
   m_Father: {fileID: 2097283519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907178058
@@ -12007,7 +12017,7 @@ TilemapCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -12967,6 +12977,68 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1946365893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946365894}
+  m_Layer: 0
+  m_Name: minPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1946365894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946365893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.55, y: -9.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 847412965}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1989069668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989069669}
+  m_Layer: 0
+  m_Name: maxPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1989069669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989069668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.22, y: 6.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 847412965}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097283518
 GameObject:
   m_ObjectHideFlags: 0
@@ -12999,7 +13071,6 @@ Transform:
   - {fileID: 619394802}
   - {fileID: 519420032}
   - {fileID: 907178057}
-  - {fileID: 847412965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

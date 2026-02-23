@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
 
     public List<Wave> waves;
     public int waveNumber;
+    public Transform minPos;
+    public Transform maxPos;
 
 
 
@@ -46,7 +48,40 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(waves[waveNumber].enemyPrefab, transform.position, transform.rotation);
+        Instantiate(waves[waveNumber].enemyPrefab, RandomSpawnPoint(), transform.rotation);
         waves[waveNumber].spawnedEnemyCount++;
+    }
+
+    private Vector2 RandomSpawnPoint()
+    {
+        Vector2 spawnPoint;
+
+        if (Random.Range(0f, 1f) > 0.5)
+        {
+            spawnPoint.x = Random.Range(minPos.position.x, maxPos.position.x);
+            if (Random.Range(0f, 1f) > 0.5)
+            {
+                spawnPoint.y = minPos.position.y;
+            }
+            else
+            {
+                spawnPoint.y = maxPos.position.y;
+            }
+        }
+        else
+        {
+            spawnPoint.y = Random.Range(minPos.position.y, maxPos.position.y);
+            if (Random.Range(0f, 1f) > 0.5)
+            {
+                spawnPoint.x = minPos.position.x;
+            }
+            else
+            {
+                spawnPoint.x = maxPos.position.x;
+            }
+        }
+
+
+            return spawnPoint;
     }
 }
