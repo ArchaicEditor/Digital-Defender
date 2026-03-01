@@ -25,24 +25,27 @@ public class EnemySpawner : MonoBehaviour
     
     void Update()
     {
-        waves[waveNumber].spawnTimer += Time.deltaTime;
-        if(waves[waveNumber].spawnTimer >= waves[waveNumber].spawnInterval)
+        if (PlayerController.Instance.gameObject.activeSelf)
         {
-            waves[waveNumber].spawnTimer = 0;
-            SpawnEnemy();
-        }
-        if (waves[waveNumber].spawnedEnemyCount >= waves[waveNumber].enemiesPerWave)
-        {
-            waves[waveNumber].spawnedEnemyCount = 0;
-            if (waves[waveNumber].spawnInterval > 0.3)
+            waves[waveNumber].spawnTimer += Time.deltaTime;
+            if (waves[waveNumber].spawnTimer >= waves[waveNumber].spawnInterval)
             {
-                waves[waveNumber].spawnInterval *= 0.9f;
+                waves[waveNumber].spawnTimer = 0;
+                SpawnEnemy();
             }
-            waveNumber++;
-        }
-        if (waveNumber >= waves.Count)
-        {
-            waveNumber = 0;
+            if (waves[waveNumber].spawnedEnemyCount >= waves[waveNumber].enemiesPerWave)
+            {
+                waves[waveNumber].spawnedEnemyCount = 0;
+                if (waves[waveNumber].spawnInterval > 0.3)
+                {
+                    waves[waveNumber].spawnInterval *= 0.9f;
+                }
+                waveNumber++;
+            }
+            if (waveNumber >= waves.Count)
+            {
+                waveNumber = 0;
+            }
         }
     }
 

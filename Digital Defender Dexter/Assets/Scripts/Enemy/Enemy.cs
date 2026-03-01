@@ -12,34 +12,43 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (PlayerController.Instance.gameObject.activeSelf)
+        {
+            //control facing player left and right
+            if (PlayerController.Instance.transform.position.x > transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+            //control facing the player up and down
+            if (PlayerController.Instance.transform.position.y > transform.position.y)
+            {
+                spriteRenderer.flipY = true;
+            }
+            else
+            {
+                spriteRenderer.flipY = false;
+            }
 
-        //control facing player left and right
-        if (PlayerController.Instance.transform.position.x > transform.position.x)
-        {
-            spriteRenderer.flipX = false;
-        }else
-        {
-            spriteRenderer.flipX = true;
-        }
-        //control facing the player up and down
-        if (PlayerController.Instance.transform.position.y > transform.position.y)
-        {
-            spriteRenderer.flipY = true;
+            //move at player
+            direction = (PlayerController.Instance.transform.position - transform.position).normalized;
+            rb.linearVelocity = new Vector2(direction.x * moveSpeed, direction.y * moveSpeed);
         }
         else
         {
-            spriteRenderer.flipY = false;
+            rb.linearVelocity = Vector2.zero;
         }
 
-        //move at player
-        direction = (PlayerController.Instance.transform.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2 (direction.x * moveSpeed, direction.y * moveSpeed);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerController.Instance.TakeDamage(1);
             Destroy(gameObject);
             Instantiate(destroyEffect, transform.position, transform.rotation);
         }

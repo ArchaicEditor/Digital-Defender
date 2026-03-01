@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     public Vector3 playerMoveDirection;
+    public float playerMaxHealth;
+    public float playerHealth;
 
     private void Awake()
     {
@@ -19,6 +22,13 @@ public class PlayerController : MonoBehaviour
             Instance = this;
         }
     
+    }
+
+    private void Start()
+    {
+        playerHealth = playerMaxHealth;
+        UIController.Instance.UpdateHealthSlider();
+
     }
 
 
@@ -37,10 +47,17 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = new Vector2 (playerMoveDirection.x * moveSpeed * Time.deltaTime, playerMoveDirection.y * moveSpeed * Time.deltaTime);
-        
 
     }
 
-
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+        UIController.Instance.UpdateHealthSlider();
+        if (playerHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
 }
