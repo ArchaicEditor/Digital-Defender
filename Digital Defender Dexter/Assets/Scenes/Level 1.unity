@@ -1614,7 +1614,11 @@ MonoBehaviour:
     health bar a battery
 
 
-    Get new fonts'
+    Get new fonts
+
+
+    Make Game over a compuer blue
+    screen crash'
 --- !u!222 &1397154548
 CanvasRenderer:
   m_ObjectHideFlags: 0
