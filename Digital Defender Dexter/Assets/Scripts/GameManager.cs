@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+    }
+
     public void GameOver()
     {
         UIController.Instance.gameOverScreen.SetActive(true);
@@ -27,4 +35,29 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1");
     }
+
+    public void Pause()
+    {
+        if (UIController.Instance.pauseScreen.activeSelf == false && UIController.Instance.gameOverScreen.activeSelf == false)
+        {
+            UIController.Instance.pauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            UIController.Instance.pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
 }

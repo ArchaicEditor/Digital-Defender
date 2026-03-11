@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private TMP_Text healthText;
     public GameObject gameOverScreen;
+    public GameObject pauseScreen;
 
 
     private void Awake()
