@@ -109,7 +109,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7251796974730535600}
   rb: {fileID: 6549954396780912732}
   moveSpeed: 1
-  damage: 1
+  damage: 5
   health: 5
   destroyEffect: {fileID: 7177035222184352317, guid: 0a61d4cf8c05f144783245d4fb18eeda, type: 3}
 --- !u!50 &6549954396780912732
