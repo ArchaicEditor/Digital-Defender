@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AreaWeaponPrefab : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class AreaWeaponPrefab : MonoBehaviour
     public AreaWeapon weapon;
     private Vector3 targetSize;
     private float timer;
+    public List<Enemy> enemiesInRange;
+    private float counter;
 
     void Start()
     {
@@ -31,14 +34,36 @@ public class AreaWeaponPrefab : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
 
-     private void OnTriggerStay2D(Collider2D collider)
+        //damage enemies in range
+        counter -= Time.deltaTime;
+
+        if (counter <= 0)
+        {
+            counter = weapon.attackSpeed;
+            for (int i = 0; i < enemiesInRange.Count; i++)
+            {
+                enemiesInRange[i].TakeDamage(weapon.damage);
+            }
+        }
+
+}
+
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemy"))
         {
-            Enemy enemy = collider.GetComponent<Enemy>();
-            enemy.TakeDamage(weapon.damage);
+            enemiesInRange.Add(collider.GetComponent<Enemy>());
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Enemy"))
+        {
+            enemiesInRange.Remove(collider.GetComponent<Enemy>());
+        }
+    }
+
 }
