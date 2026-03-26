@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class PlayerController : MonoBehaviour
     public Vector3 playerMoveDirection;
     public float playerMaxHealth;
     public float playerHealth;
+
+    public int experience;
+    public int currentLevel;
+    public int maxLevel;
+    public List<int> playerLevels;
 
     private bool isImmune;
     [SerializeField] private float immueDuration;
@@ -30,8 +36,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        for (int i = playerLevels.Count; i < maxLevel; i++)
+        {
+            playerLevels.Add(Mathf.CeilToInt(playerLevels[playerLevels.Count - 1] * 1.1f + 15));
+        }
         playerHealth = playerMaxHealth;
         UIController.Instance.UpdateHealthSlider();
+        UIController.Instance.UpdateExperienceSlider();
 
     }
 
@@ -73,4 +84,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void GetExperience(int experienceToGet)
+    {
+        experience += experienceToGet;
+        UIController.Instance.UpdateExperienceSlider();
+        if (experience >= playerLevels[currentLevel - 1])
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        experience -= playerLevels[currentLevel - 1];
+        currentLevel++;
+        UIController.Instance.UpdateExperienceSlider();
+    }
 }

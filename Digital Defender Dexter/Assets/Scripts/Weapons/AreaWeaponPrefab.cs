@@ -15,9 +15,9 @@ public class AreaWeaponPrefab : MonoBehaviour
     {
         weapon = GameObject.Find("Area Weapon").GetComponent<AreaWeapon>();
         //Destroy(gameObject, weapon.duration);
-        targetSize = Vector3.one * weapon.range;
+        targetSize = Vector3.one * weapon.stats[weapon.weaponLevel].range;
         transform.localScale = Vector3.zero;
-        timer = weapon.duration;
+        timer = weapon.stats[weapon.weaponLevel].duration;
     }
 
     void Update()
@@ -40,10 +40,10 @@ public class AreaWeaponPrefab : MonoBehaviour
 
         if (counter <= 0)
         {
-            counter = weapon.attackSpeed;
+            counter = weapon.stats[weapon.weaponLevel].attackSpeed;
             for (int i = 0; i < enemiesInRange.Count; i++)
             {
-                enemiesInRange[i].TakeDamage(weapon.damage);
+                enemiesInRange[i].TakeDamage(weapon.stats[weapon.weaponLevel].damage);
             }
         }
 

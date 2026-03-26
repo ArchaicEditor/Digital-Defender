@@ -174,5 +174,7 @@ MonoBehaviour:
   rb: {fileID: 1380263299492656908}
   moveSpeed: 1.15
   damage: 20
-  health: 15
+  health: 17
+  experienceToGive: 15
+  pushTime: 0.1
   destroyEffect: {fileID: 7177035222184352317, guid: 0a61d4cf8c05f144783245d4fb18eeda, type: 3}
