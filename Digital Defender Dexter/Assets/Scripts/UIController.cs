@@ -12,7 +12,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text experienceText;
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
+    public GameObject levelUpScreen;
     [SerializeField] public TMP_Text timerText;
+
+    public LevelUpButton[] levelUpButtons;
 
 
     private void Awake()
@@ -48,5 +51,17 @@ public class UIController : MonoBehaviour
         float sec = Mathf.FloorToInt(timer % 60f);
 
         timerText.text = min + ":" + sec.ToString("00");
+    }
+
+    public void levelUpScreenOpen()
+    {
+        levelUpScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void levelUpScreenClose()
+    {
+        levelUpScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
