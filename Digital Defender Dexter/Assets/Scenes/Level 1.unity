@@ -1072,7 +1072,19 @@ MonoBehaviour:
     damage: 2
     range: 1.1
     attackSpeed: 0.5
-    description: Damage +
+    description: Damage+
+  - cooldown: 5
+    duration: 3
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.5
+    description: Duration+
+  - cooldown: 5
+    duration: 3.5
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.5
+    description: Fully Upgraded
   weaponImage: {fileID: 21300000, guid: 5cb93e479cd22ae4daab081509bbc86c, type: 3}
   prefab: {fileID: 1338131633971093125, guid: df252b01d2ce27f458064b580c5d4962, type: 3}
 --- !u!1 &652770965
