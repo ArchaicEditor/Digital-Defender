@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 playerMoveDirection;
     public float playerMaxHealth;
     public float playerHealth;
+    private Animator animator;
 
     public int experience;
     public int currentLevel;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         playerHealth = playerMaxHealth;
         UIController.Instance.UpdateHealthSlider();
         UIController.Instance.UpdateExperienceSlider();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -62,6 +64,9 @@ public class PlayerController : MonoBehaviour
         {
             isImmune = false;
         }
+
+        bool isMoving = playerMoveDirection.sqrMagnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
     }
 
     void FixedUpdate()

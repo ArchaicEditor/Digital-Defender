@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4506118603227827355}
   - component: {fileID: 5772362048302363819}
   - component: {fileID: 7306011601705712308}
+  - component: {fileID: 5072563821540123522}
   m_Layer: 7
   m_Name: Enemy 3
   m_TagString: Enemy
@@ -178,3 +179,25 @@ MonoBehaviour:
   experienceToGive: 5
   pushTime: 0.3
   destroyEffect: {fileID: 7177035222184352317, guid: 0a61d4cf8c05f144783245d4fb18eeda, type: 3}
+--- !u!95 &5072563821540123522
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910947094096594097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 080e4270fec24f1498e6a50a1462d76e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
