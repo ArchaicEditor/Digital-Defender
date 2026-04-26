@@ -17011,7 +17011,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1285997905}
-  - {fileID: 895741903}
   - {fileID: 767326327}
   - {fileID: 486302267}
   - {fileID: 1786359088}
@@ -17739,11 +17738,11 @@ Transform:
   m_GameObject: {fileID: 895741902}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -506.7, y: 469.7, z: 0}
-  m_LocalScale: {x: 7.5, y: 28.1, z: 28.1}
+  m_LocalPosition: {x: 203.30008, y: -0.29995728, z: 0}
+  m_LocalScale: {x: 7.5000005, y: 28.1, z: 28.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 671389466}
+  m_Father: {fileID: 1285997905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &895741904
 SpriteRenderer:
@@ -17990,25 +17989,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
-  - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
-    spawnTimer: 0
-    spawnInterval: 1
-    enemiesPerWave: 10
-    spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
     spawnTimer: 0
-    spawnInterval: 2
-    enemiesPerWave: 10
+    spawnInterval: 1
+    enemiesPerWave: 12
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
     spawnTimer: 0
-    spawnInterval: 2.5
+    spawnInterval: 2
+    enemiesPerWave: 3
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.5
     enemiesPerWave: 5
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
     spawnTimer: 0
-    spawnInterval: 3
-    enemiesPerWave: 3
+    spawnInterval: 2.5
+    enemiesPerWave: 2
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.75
+    enemiesPerWave: 15
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.5
+    enemiesPerWave: 7
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
+    spawnTimer: 0
+    spawnInterval: 2
+    enemiesPerWave: 5
     spawnedEnemyCount: 0
   waveNumber: 0
   minPos: {fileID: 80840494}
@@ -18839,6 +18853,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2143531831}
+  - {fileID: 895741903}
   - {fileID: 837943991}
   - {fileID: 1852549044}
   m_Father: {fileID: 671389466}
@@ -19917,6 +19932,36 @@ MonoBehaviour:
     damage: 3
     range: 1.1
     attackSpeed: 0.5
+    description: Attack Speed+
+  - cooldown: 5
+    duration: 3.5
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.65
+    description: Duration+
+  - cooldown: 5
+    duration: 3.85
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.65
+    description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.85
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.65
+    description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.85
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.65
+    description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.85
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.65
     description: Fully Upgraded
   weaponImage: {fileID: 21300000, guid: 5cb93e479cd22ae4daab081509bbc86c, type: 3}
   prefab: {fileID: 1338131633971093125, guid: df252b01d2ce27f458064b580c5d4962, type: 3}

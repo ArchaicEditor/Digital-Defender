@@ -1630,6 +1630,24 @@ MonoBehaviour:
     range: 1.1
     attackSpeed: 0.5
     description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.5
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.5
+    description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.5
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.5
+    description: Fully Upgraded
+  - cooldown: 5
+    duration: 3.5
+    damage: 3
+    range: 1.1
+    attackSpeed: 0.5
+    description: Fully Upgraded
   weaponImage: {fileID: 21300000, guid: 5cb93e479cd22ae4daab081509bbc86c, type: 3}
   prefab: {fileID: 1338131633971093125, guid: df252b01d2ce27f458064b580c5d4962, type: 3}
 --- !u!1 &703421970
@@ -2071,6 +2089,26 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
     spawnTimer: 0
     spawnInterval: 3
+    enemiesPerWave: 3
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.25
+    enemiesPerWave: 15
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.5
+    enemiesPerWave: 10
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
+    spawnTimer: 0
+    spawnInterval: 2
+    enemiesPerWave: 6
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.75
     enemiesPerWave: 3
     spawnedEnemyCount: 0
   waveNumber: 0
@@ -2921,7 +2959,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2121741084}
-  - {fileID: 1487919070}
   - {fileID: 1032082165}
   - {fileID: 2052586855}
   - {fileID: 2052931134}
@@ -2946,10 +2983,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf77de534cc988b4abe154e7f4cfe4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIController
-  playerHealthSlider: {fileID: 0}
-  healthText: {fileID: 0}
-  playerExperienceSlider: {fileID: 0}
-  experienceText: {fileID: 0}
+  playerHealthSlider: {fileID: 2121741085}
+  healthText: {fileID: 1503622135}
+  playerExperienceSlider: {fileID: 1032082166}
+  experienceText: {fileID: 1804857280}
   gameOverScreen: {fileID: 2052586854}
   pauseScreen: {fileID: 2052931131}
   levelUpScreen: {fileID: 1774761977}
@@ -4660,11 +4697,11 @@ Transform:
   m_GameObject: {fileID: 1487919069}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -506.69998, y: 469.70004, z: 0}
-  m_LocalScale: {x: 7.49952, y: 28.100517, z: 28.100517}
+  m_LocalPosition: {x: 203.28383, y: -0.2999333, z: 0}
+  m_LocalScale: {x: 7.4989204, y: 28.09827, z: 28.09827}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1020607101}
+  m_Father: {fileID: 2121741084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1487919071
 SpriteRenderer:
@@ -22659,6 +22696,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1557521328}
+  - {fileID: 1487919070}
   - {fileID: 2053296642}
   - {fileID: 1503622134}
   m_Father: {fileID: 1020607101}

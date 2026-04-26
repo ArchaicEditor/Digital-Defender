@@ -732,10 +732,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf77de534cc988b4abe154e7f4cfe4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIController
-  playerHealthSlider: {fileID: 0}
-  healthText: {fileID: 0}
-  playerExperienceSlider: {fileID: 0}
-  experienceText: {fileID: 0}
+  playerHealthSlider: {fileID: 1014660182}
+  healthText: {fileID: 1277446365}
+  playerExperienceSlider: {fileID: 1741734199}
+  experienceText: {fileID: 41483149}
   gameOverScreen: {fileID: 2031201321}
   pauseScreen: {fileID: 1906951629}
   levelUpScreen: {fileID: 2035910323}
@@ -818,7 +818,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1014660181}
-  - {fileID: 1887729235}
   - {fileID: 1741734198}
   - {fileID: 2031201324}
   - {fileID: 1906951632}
@@ -871,26 +870,56 @@ MonoBehaviour:
   - cooldown: 5
     duration: 3
     damage: 2
-    range: 0.9
-    attackSpeed: 0.5
-    description: 'Area + '
-  - cooldown: 5
-    duration: 3
-    damage: 2
-    range: 1.1
+    range: 0.85
     attackSpeed: 0.5
     description: Damage+
   - cooldown: 5
     duration: 3
     damage: 3
-    range: 1.1
+    range: 0.85
     attackSpeed: 0.5
+    description: Attack Speed+
+  - cooldown: 5
+    duration: 3
+    damage: 3
+    range: 0.85
+    attackSpeed: 0.6
+    description: Duration+
+  - cooldown: 5
+    duration: 3.25
+    damage: 3
+    range: 0.85
+    attackSpeed: 0.6
     description: Duration+
   - cooldown: 5
     duration: 3.5
     damage: 3
-    range: 1.1
-    attackSpeed: 0.5
+    range: 0.85
+    attackSpeed: 0.6
+    description: Duration+
+  - cooldown: 5
+    duration: 3.75
+    damage: 3
+    range: 0.85
+    attackSpeed: 0.6
+    description: 'Overclock: Damage+ Range+ Cooldown+'
+  - cooldown: 6.25
+    duration: 3.75
+    damage: 4
+    range: 0.9
+    attackSpeed: 0.6
+    description: Fully Upgraded
+  - cooldown: 6.25
+    duration: 3.75
+    damage: 4
+    range: 0.9
+    attackSpeed: 0.6
+    description: Fully Upgraded
+  - cooldown: 6.25
+    duration: 3.75
+    damage: 4
+    range: 0.9
+    attackSpeed: 0.6
     description: Fully Upgraded
   weaponImage: {fileID: 21300000, guid: 5cb93e479cd22ae4daab081509bbc86c, type: 3}
   prefab: {fileID: 1338131633971093125, guid: df252b01d2ce27f458064b580c5d4962, type: 3}
@@ -1297,25 +1326,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
-  - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
-    spawnTimer: 0
-    spawnInterval: 1
-    enemiesPerWave: 10
-    spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
     spawnTimer: 0
-    spawnInterval: 2
-    enemiesPerWave: 10
+    spawnInterval: 0.5
+    enemiesPerWave: 27
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
     spawnTimer: 0
-    spawnInterval: 2.5
-    enemiesPerWave: 5
+    spawnInterval: 1.75
+    enemiesPerWave: 7
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
     spawnTimer: 0
-    spawnInterval: 3
+    spawnInterval: 2
     enemiesPerWave: 3
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 8910947094096594097, guid: 06da7918bcc6c4b4f99273d1576cf808, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.5
+    enemiesPerWave: 5
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1
+    enemiesPerWave: 5
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 1234562853882282280, guid: 61c1822570950e649819f02f341dfa9d, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    enemiesPerWave: 10
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 7609051781520699704, guid: e2c8848c877ba974f81caabfa51288e8, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    enemiesPerWave: 25
+    spawnedEnemyCount: 0
+  - enemyPrefab: {fileID: 2957024746236336621, guid: df79985004bf9f34ab7dfe8e571a9cae, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1.5
+    enemiesPerWave: 6
     spawnedEnemyCount: 0
   waveNumber: 0
   minPos: {fileID: 1562823566}
@@ -4551,6 +4600,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1383502930}
+  - {fileID: 1887729235}
   - {fileID: 18044104}
   - {fileID: 1277446364}
   m_Father: {fileID: 281153726}
@@ -21917,11 +21967,11 @@ Transform:
   m_GameObject: {fileID: 1887729234}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -506.69998, y: 469.70004, z: 0}
-  m_LocalScale: {x: 7.49952, y: 28.100517, z: 28.100517}
+  m_LocalPosition: {x: 203.28383, y: -0.2999333, z: 0}
+  m_LocalScale: {x: 7.4989204, y: 28.09827, z: 28.09827}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 281153726}
+  m_Father: {fileID: 1014660181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1887729236
 SpriteRenderer:
